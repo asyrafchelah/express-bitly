@@ -14,7 +14,7 @@ export class UrlShortenController {
         let urlData = {
             "id": storageLen,
             "urls": request.body.urls,
-            "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storageLen
+            "shortUrl": "https://protected-bayou-98151.herokuapp.com/urls/"+storageLen
         }
         storage.urls.push(urlData)
         response.json({
