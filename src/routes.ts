@@ -14,14 +14,12 @@ export const Routes = [{
     controller: UrlShortenController,
     action: "shortUrl"
 },
-
 {
     method: "get",
     route: "/urls",
     controller: UrlShortenController,
-    action: "list"   
+    action: "showList"   
 },
-
 {
     method: "get",
     route: "/urls/:id",

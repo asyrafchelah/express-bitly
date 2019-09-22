@@ -9,25 +9,20 @@ export class UrlShortenController {
 
 
 
-    async shortUrl(request: Request, response: Response, next: NextFunction) {
-        
-        let urlData = storage.urls.length + 1
-        let shortUrlData = {
-            "id" : storage.urls.length + 1,
-            "urls":request.body.urls,
-            "shortUrl": "https://protected-bayou-98151.herokuapp.com/" + urlData ,
+    async shortUrl(request: Request, response: Response, next: NextFunction){
+        let storageLen = storage.urls.length + 1
+        let urlData = {
+            "id": storageLen,
+            "urls": request.body.urls,
+            "shortUrl": "https://warm-scrubland-03694.herokuapp.com/urls/"+storageLen
         }
-
-        storage.urls.push(shortUrlData)
-
+        storage.urls.push(urlData)
         response.json({
-            "shortUrl": shortUrlData.shortUrl
+            "shortUrl": urlData.shortUrl
         })
-
-
     }
 
-    async list(request: Request, response: Response, next: NextFunction){
+    async showList(request: Request, response: Response, next: NextFunction){
         response.send(storage.urls)
     }
 
