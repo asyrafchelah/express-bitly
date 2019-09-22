@@ -2,10 +2,19 @@ import * as express from "express";
 import * as bodyParser from  "body-parser";
 import {NextFunction, Request, Response} from "express";
 import { Routes } from "./routes";
-import * as cors from 'cors'
+import * as cors from 'cors';
 
 export const storage = {
-    users: []
+    // users: [],
+    urls:[
+        // {
+        //     "id" : 1,
+        //     "url":"https://www.example.com",
+        //     "shortUrl": "https://www.example.com",
+        // }
+
+    ]
+
 }
 
 export const srcPath = __dirname
